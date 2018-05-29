@@ -1,0 +1,1 @@
+Creating objects to represent a fictional political campaign
