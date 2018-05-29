@@ -13,7 +13,7 @@ let constituentPhoto = {
   alt: "Some of Elizabeth's constituents",
   src: "images/constituents.jpg"
 }
-const images = [headshot, familyPhoto, constituentPhoto];
+let images = [headshot, familyPhoto, constituentPhoto];
 
 // Objects for Platform statements
 let taxes = {
@@ -72,7 +72,7 @@ let bob = {
   availability: "Weekends",
   activities: ["Polling", "Putting up signs"]
 }
-const volunteers = [alice, bob];
+let volunteers = [alice, bob];
 
 // Objects for Calendar of events
 let event1 = {
@@ -95,7 +95,7 @@ let event4 = {
   date: "July 4th, 2018",
   time: "All day"
 }
-const calendar = [event1, event2, event3, event4];
+let calendar = [event1, event2, event3, event4];
 
 // Overall Campaign object
 let campaign = {
@@ -104,3 +104,19 @@ let campaign = {
   registerURL: "www.registertovoteforme.com",
   donateURL: "www.giveusmoneyplease.com"
 }
+
+// A function to change the value of any property in any object
+const changeObjectProperty = (objectToChange, propertyToChange, newValue) => {
+  if (objectToChange.hasOwnProperty(propertyToChange)) {
+    objectToChange[propertyToChange] = newValue;
+  } else {
+    console.log(`This object does not have a property named '${propertyToChange}'.`)
+  }
+}
+
+// console.log(volunteers[0].firstName);
+// console.log(alice.firstName);
+changeObjectProperty(alice, "firstName", "Amanda");
+// changeObjectProperty(alice, "middleName", "Anne");
+// console.log(volunteers[0].firstName);
+
