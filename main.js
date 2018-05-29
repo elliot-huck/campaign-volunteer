@@ -1,3 +1,4 @@
+//Main Exercise:
 // Create new objects to represent campaign data
 
 // Objects for Image gallery
@@ -49,8 +50,6 @@ let candidate = {
   platforms,
   images
 }
-
-
 
 
 // Objects for Volunteer database
@@ -105,6 +104,11 @@ let campaign = {
   donateURL: "www.giveusmoneyplease.com"
 }
 
+
+
+
+
+//Challenge Exercise:
 // A function to change the value of any property in any object
 const changeObjectProperty = (objectToChange, propertyToChange, newValue) => {
   if (objectToChange.hasOwnProperty(propertyToChange)) {
@@ -120,3 +124,21 @@ changeObjectProperty(alice, "firstName", "Amanda");
 // changeObjectProperty(alice, "middleName", "Anne");
 // console.log(volunteers[0].firstName);
 
+
+
+//Advanced Challenge Exercise:
+// Build an <article> containing Elizabeth's platform statements and write it to the DOM
+const populatePlatforms = () => {
+  let article = document.createElement("article");
+  article.id = `${candidate.districtState}-${candidate.districtNumber}`;
+  article.innerHTML += `<ul>`;
+  for (let i = 0; i < platforms.length; i++) {
+    article.innerHTML += `
+    <li>${platforms[i].issue}: ${platforms[i].position}</li>`;
+  }
+  article.innerHTML += `</ul>`
+  let body = document.querySelector("body");
+  body.insertBefore(article, body.firstElementChild);
+}
+
+populatePlatforms();
